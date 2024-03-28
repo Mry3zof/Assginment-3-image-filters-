@@ -3,7 +3,7 @@
 //#################################Dr.Mohamed Elramly##################################
 //#####################################################################################
 
-//Auhtor 1 ID: 20230511 section 21,22 Youssef Mohamed did flip filter and Black and white and Grayscale Conversion
+//Authhor 1 ID: 20230511 section 21,22 Youssef Mohamed did flip filter and Black and white and Grayscale Conversion
 //Author 2 ID: 20230504 section 21,22 Youssef Farid did resize filter and invert color filters
 
 
@@ -205,7 +205,7 @@ void GrayScaleConversion(string& s) {
             for (int k = 0; k < 3; ++k) {
                 avg += image(i, j, k);//summation of the 3 colors in the pixel
             }
-            avg /= 3;//them divide it by 3 accordin to RGB
+            avg /= 3;//them divide it by 3 according to RGB
             image(i, j, 0) = avg;//the RGB in the pixel will be the same value
             image(i, j, 1) = avg;
             image(i, j, 2) = avg;
@@ -264,7 +264,7 @@ void BlackAndWhite(string& s) {
             for (int k = 0; k < 3; k++) {
                 x += image(i, j, k);
             }
-            if (x / 3 > 112) {//if the pixel greate than the half of 255 the pixel turn black else turn blue
+            if (x / 3 > 112) {//if the pixel greater than the half of 255 the pixel turn black else turn blue
                 for (int k = 0; k < 3; k++) {
                     image(i, j, k) = 255;
                 }
