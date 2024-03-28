@@ -14,8 +14,18 @@
 #include "Image_Class.h"
 #include<cmath>
 #include<string>
+#include <fstream>
 using namespace std;
 
+bool checktheextension(string s) {
+    int ccc = s.size();
+    string newCharacter = string(1, (tolower(s[ccc - 3]))) + string(1, tolower(s[ccc - 2])) + string(1, tolower(s[ccc - 1]));
+    cout << newCharacter;
+    if (newCharacter == "jpg" || newCharacter == "bmp" || newCharacter == "png" || newCharacter == "tga") {
+        return true;
+    }
+    else { return false; }
+}
 void ResizeImage(string s) {//procedure to resize the image
     Image image;
     image.loadNewImage(s);//load the image
@@ -33,11 +43,30 @@ void ResizeImage(string s) {//procedure to resize the image
         }
     }
 
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    potatos.saveImage(s);
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        potatos.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        potatos.saveImage(s);
+        cout << "Done!\n";
+    }
 }
 void InvertImage(string s) {
     cout << "Please wait a few seconds........\n";
@@ -50,12 +79,30 @@ void InvertImage(string s) {
             }
         }
     }
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    cout << "Please wait a few seconds........\n";
-    image.saveImage(s);//save the image
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        image.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        image.saveImage(s);
+        cout << "Done!\n";
+    }
 }
 void FlipHorizontal(string s) {
     Image image(s);
@@ -73,11 +120,30 @@ void FlipHorizontal(string s) {
         f--;//decrease the new width by 1;
     }
 
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    image2.saveImage(s);
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);;
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        image2.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        image2.saveImage(s);
+        cout << "Done!\n";
+    }
 
 }
 void FlipVertical(string s) {
@@ -94,11 +160,30 @@ void FlipVertical(string s) {
         }
     }
 
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    image2.saveImage(s);
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        image2.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        image2.saveImage(s);
+        cout << "Done!\n";
+    }
 }
 void GrayScaleConversion(string s) {
     Image image(s);
@@ -116,11 +201,30 @@ void GrayScaleConversion(string s) {
         }
     }
 
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    image.saveImage(s);
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        image.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        image.saveImage(s);
+        cout << "Done!\n";
+    }
 }
 void BlackAndWhite(string s) {
     Image image(s);
@@ -157,63 +261,101 @@ void BlackAndWhite(string s) {
             }
         }
     }
-
-    cout << "Pls enter image name to store new image\n";
-    cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> s;
-    cout << "Please wait a few seconds........\n";
-    image.saveImage(s);
-    cout << "Done!\n";
+    char hh;
+    while (true) {
+        cout << "do you want to save same file?(Y/N): ";
+        cin >> hh; hh = toupper(hh);
+        if (hh == 'Y' || hh == 'N')break;
+        else { cout << "Its not valid choice please enter valid one\n"; }
+    }
+    if (hh == 'Y') {
+        image.saveImage(s);
+    }
+    else {
+        while (true) {
+            cout << "Pls enter image name to store new image\n";
+            cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> s;
+            if (checktheextension(s))break;
+            else {
+                cout << "its not valid extension\n";
+            }
+        }
+        cout << "Please wait a few seconds........\n";
+        image.saveImage(s);
+        cout << "Done!\n";
+    }
 }
-
-
 int main() {
     cout << "Welcome to our program\nThis is program were you choose the filter and type the image name\nand our role is to apply this filter on the image\n";
-    string name;
-    cout << "please enter the image name you wish to apply filters on\nfollowed by a specify extension .jpg, .bmp, .png, .tga: ";
-    cin >> name;
-    char choice;
-    while (true) {//loop to make the program dont close
-        cout << "What filter do you wish to apply?\nA)Grayscale Conversion\nB)Black and white\nC)Invert Image\nD)Flip Image\nE)Resizing Images\nF)Load another image\nG)Exit\nPlease Enter a valid choise: ";
-        while (true) {//this loop to make validation
-            cin >> choice;
-            if (choice == 'A' || choice == 'a' || choice == 'B' || choice == 'b' || choice == 'c' || choice == 'C' || choice == 'D' || choice == 'd' || choice == 'e' || choice == 'E' || choice == 'f' || choice == 'F'|| choice == 'g' || choice == 'G')break;
-            else { cout << "It's not valid choice\nPlease enter a valid one: "; }
-        }
-        if (choice == 'A' || choice == 'a') {
-            GrayScaleConversion(name);
-        }
-        else if (choice == 'B' || choice == 'b') {
-            BlackAndWhite(name);
-        }
-        else if (choice == 'C' || choice == 'c') {
-            InvertImage(name);
-        }
-        else if (choice == 'D' || choice == 'd') {
-            string choice2;
-            cout << "1.Flip vertical\n2.Flip horizontal\nPlease enter valid choice: ";//make choice to flip vertical or horizontal
-            while (true)
-            {
-                cin >> choice2;
-                if (choice2 == "1" || choice2 == "2")break;
-                else { cout << "Its not valid choice\nPlease enter a valid one: "; }
+    while (true) {
+        bool x = false;
+        string name;
+        char gg;
+        while (true) {
+            cout << "please enter the image name you wish to apply filters on\nfollowed by a specify extension .jpg, .bmp, .png, .tga: ";
+            cin >> name;
+            x = false;
+            try {
+                ifstream file(name);
+                if (!file) {
+                    throw "File not found!";
+                }
+                // File processing code here
+                cout << "File '" << name << "' opened successfully.\n" << endl;
+                break;
             }
-            if (choice2 == "1") {
-                FlipVertical(name);
+            catch (const char* errorMessage) {
+                cerr << "Error: " << errorMessage << endl;
+            }
+        }
+        char choice;
+        bool xf = false;
+        bool xg = false;
+        while (true) {//loop to make the program dont close
+            cout << "What filter do you wish to apply?\nA)Grayscale Conversion\nB)Black and white\nC)Invert Image\nD)Flip Image\nE)Resizing Images\nF)Load another image\nG)Exit\nPlease Enter a valid choise: ";
+            while (true) {//this loop to make validation
+                cin >> choice;
+                if (choice == 'A' || choice == 'a' || choice == 'B' || choice == 'b' || choice == 'c' || choice == 'C' || choice == 'D' || choice == 'd' || choice == 'e' || choice == 'E' || choice == 'f' || choice == 'F' || choice == 'g' || choice == 'G')break;
+                else { cout << "It's not valid choice\nPlease enter a valid one: "; }
+            }
+            if (choice == 'A' || choice == 'a') {
+                GrayScaleConversion(name);
+            }
+            else if (choice == 'B' || choice == 'b') {
+                BlackAndWhite(name);
+            }
+            else if (choice == 'C' || choice == 'c') {
+                InvertImage(name);
+            }
+            else if (choice == 'D' || choice == 'd') {
+                string choice2;
+                cout << "1.Flip vertical\n2.Flip horizontal\nPlease enter valid choice: ";//make choice to flip vertical or horizontal
+                while (true)
+                {
+                    cin >> choice2;
+                    if (choice2 == "1" || choice2 == "2")break;
+                    else { cout << "Its not valid choice\nPlease enter a valid one: "; }
+                }
+                if (choice2 == "1") {
+                    FlipVertical(name);
+                }
+                else {
+                    FlipHorizontal(name);
+                }
+            }
+            else if (choice == 'e' || choice == 'E') {
+                ResizeImage(name);
+            }
+            else if (choice == 'f' || choice == 'F') {
+                xf = true; break;
             }
             else {
-                FlipHorizontal(name);
+                xg = true; break;
             }
         }
-        else if (choice == 'e' || choice == 'E') {
-            ResizeImage(name);
-        }
-        else if (choice == 'g' || choice == 'G'){
+        if (xf) continue;
 
-        }
-        else {
-            return 0;
-        }
-
+        if (xg)return 0;
     }
 }
