@@ -26,7 +26,7 @@ bool checktheextension(string s) {
     }
     else { return false; }
 }
-void ResizeImage(string s) {//procedure to resize the image
+void ResizeImage(string& s) {//procedure to resize the image
     Image image;
     image.loadNewImage(s);//load the image
     int wid;
@@ -54,21 +54,24 @@ void ResizeImage(string s) {//procedure to resize the image
         potatos.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        potatos.saveImage(s);
+        s = neww;
+        potatos.saveImage(neww);
         cout << "Done!\n";
     }
 }
-void InvertImage(string s) {
+void InvertImage(string& s) {
     cout << "Please wait a few seconds........\n";
     Image image(s);
     for (int i = 0; i < image.width; ++i) {
@@ -90,21 +93,24 @@ void InvertImage(string s) {
         image.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        image.saveImage(s);
+        s = neww;
+        image.saveImage(neww);
         cout << "Done!\n";
     }
 }
-void FlipHorizontal(string s) {
+void FlipHorizontal(string& s) {
     Image image(s);
     int f = image.width - 1;
     Image image2(image.width, image.height);//make new image with same dimension
@@ -131,22 +137,25 @@ void FlipHorizontal(string s) {
         image2.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        image2.saveImage(s);
+        s = neww;
+        image2.saveImage(neww);
         cout << "Done!\n";
     }
 
 }
-void FlipVertical(string s) {
+void FlipVertical(string& s) {
     Image image(s);
     Image image2(image.width, image.height);//create new image with same dimension
     int y;
@@ -171,21 +180,24 @@ void FlipVertical(string s) {
         image2.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        image2.saveImage(s);
+        s = neww;
+        image2.saveImage(neww);
         cout << "Done!\n";
     }
 }
-void GrayScaleConversion(string s) {
+void GrayScaleConversion(string& s) {
     Image image(s);
     for (int i = 0; i < image.width; ++i) {
         for (int j = image.height - 1; j >= 0; --j) {
@@ -212,21 +224,24 @@ void GrayScaleConversion(string s) {
         image.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        image.saveImage(s);
+        s = neww;
+        image.saveImage(neww);
         cout << "Done!\n";
     }
 }
-void BlackAndWhite(string s) {
+void BlackAndWhite(string& s) {
     Image image(s);
     cout << "Please wait a few seconds........\n";
 
@@ -272,17 +287,20 @@ void BlackAndWhite(string s) {
         image.saveImage(s);
     }
     else {
+        string neww;
         while (true) {
             cout << "Pls enter image name to store new image\n";
             cout << "and follow it with a specify extension .jpg, .bmp, .png, .tga: ";
-            cin >> s;
-            if (checktheextension(s))break;
+            cin >> neww;
+            if (checktheextension(neww))break;
             else {
                 cout << "its not valid extension\n";
             }
         }
+
         cout << "Please wait a few seconds........\n";
-        image.saveImage(s);
+        s = neww;
+        image.saveImage(neww);
         cout << "Done!\n";
     }
 }
