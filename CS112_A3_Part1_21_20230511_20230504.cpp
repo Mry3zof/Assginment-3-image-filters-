@@ -1,9 +1,9 @@
 //####################################FCAI-CU CS112####################################
 //################################Assignment 3 part 1 #################################
-//#################################Dr.Mohamed Elramly##################################
+//#################################Dr.Mohamed ElRamly##################################
 //#####################################################################################
 
-//Authhor 1 ID: 20230511 section 21,22 Youssef Mohamed did flip filter and Black and white and Grayscale Conversion
+//Author 1 ID: 20230511 section 21,22 Youssef Mohamed did flip filter and Black and white and Grayscale Conversion
 //Author 2 ID: 20230504 section 21,22 Youssef Farid did resize filter and invert color filters
 
 
